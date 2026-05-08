@@ -1,6 +1,6 @@
-# Directories
+# 目录结构
 
-## Recommended Layout
+## 推荐布局
 
 ```text
 workspace/
@@ -16,20 +16,20 @@ workspace/
 
 ## input
 
-`input/` is remote-pointer-first.
+`input/` 应采用 remote-pointer-first 模型。
 
-Each logical source tree should eventually contain:
+每个逻辑源目录最终都应包含：
 
 - `REMOTE_POINTER.json`
-- optional operator notes
+- 可选的操作者备注
 
-Shared registry:
+共享注册表：
 
 - `REMOTE_INPUT_INDEX.json`
 
 ## runs
 
-Each run directory may contain:
+每个 run 目录可能包含：
 
 - `00_source`
 - `01_probe`
@@ -43,29 +43,29 @@ Each run directory may contain:
 - `_flags`
 - `_reports`
 
-### Post-delivery retention
+### 交付后的保留策略
 
-Keep:
+保留：
 
 - `01_probe`
 - `03_text_raw`
 - `04_text_clean`
 - `05_final`
-- `_delivery` if present
+- `_delivery`，如果存在
 - `_logs`
 - `_manifests`
 - `_flags`
 - `_reports`
 
-Delete:
+删除：
 
 - `00_source`
 - `02_normalized`
 
 ## models
 
-Persistent local model cache for transcription and related runtimes.
+本地持久模型缓存，用于转写和相关运行时。
 
 ## hf_home
 
-Persistent local cache for diarization-related assets.
+本地持久缓存，用于 diarization 相关资源。

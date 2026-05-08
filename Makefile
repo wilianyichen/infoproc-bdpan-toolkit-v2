@@ -2,7 +2,7 @@
 
 VERSION := $(shell cat VERSION)
 
-.PHONY: help check version clean tree docs
+.PHONY: help check version clean tree docs package
 
 help:
 	@printf "Targets:\n"
@@ -10,6 +10,7 @@ help:
 	@printf "  make version  Print the repository version\n"
 	@printf "  make tree     Show a shallow repository tree\n"
 	@printf "  make docs     Print the docs entrypoint\n"
+	@printf "  make package  Build a release bundle under dist/release/\n"
 	@printf "  make clean    Remove local build artifacts\n"
 
 check:
@@ -25,6 +26,8 @@ check:
 	@test -f docs/directories.md
 	@test -f docs/commands.md
 	@test -f docs/audit-and-retention.md
+	@test -f scripts/release/build_release_bundle.sh
+	@test -f scripts/release/package_release.py
 	@printf "release scaffold looks complete (%s)\n" "$(VERSION)"
 
 version:
@@ -38,3 +41,6 @@ tree:
 
 docs:
 	@echo "Docs entrypoint: README.md"
+
+package:
+	@bash scripts/release/build_release_bundle.sh $(PACKAGE_RELEASE_ARGS)

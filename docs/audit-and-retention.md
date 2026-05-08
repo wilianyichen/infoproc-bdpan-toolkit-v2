@@ -1,40 +1,40 @@
-# Audit And Retention
+# 审计与保留
 
-## Audit Objects
+## 审计对象
 
-The minimum audit layer should preserve:
+最小审计层应保留：
 
 - run manifests
 - run logs
-- probe metadata
-- raw transcript outputs
-- clean text outputs
-- final markdown outputs
-- delivery trees when used
-- exceptional file markers
+- probe 元数据
+- 原始 transcript 输出
+- clean text 输出
+- 最终 markdown 输出
+- 使用过的 delivery 树
+- 异常文件标记
 
-## Empty Transcript Policy
+## 空转写策略
 
-A file should be marked `no_valid_text` when:
+如果某个文件满足下面条件，就应标记为 `no_valid_text`：
 
-- transcript segments are empty
-- raw text is empty
-- clean text is empty
+- transcript segments 为空
+- raw text 为空
+- clean text 为空
 
-Optional context:
+可选上下文：
 
-- very short duration
-- language mis-detection
+- 时长非常短
+- 语言识别错误
 
-Artifacts:
+应保留的产物：
 
-- per-file marker JSON
-- aggregated run report
-- skip-upload relpath list
+- 单文件 marker JSON
+- 聚合后的 run 报告
+- skip-upload 相对路径清单
 
-## Retention Policy
+## 保留策略
 
-### Keep Long-Term
+### 长期保留
 
 - `REMOTE_INPUT_INDEX.json`
 - `REMOTE_POINTER.json`
@@ -47,12 +47,12 @@ Artifacts:
 - run `_flags`
 - run `_reports`
 
-### Delete After Verification
+### 校验完成后删除
 
-- local source mirrors
-- normalized media caches
-- temporary subset input trees
+- 本地源文件镜像
+- 规范化媒体缓存
+- 临时子集输入树
 
-## Repository Rule
+## 仓库规则
 
-Retention policy is part of the public contract. Cleanup that breaks auditability is a product bug, not an operator preference.
+保留策略是公开契约的一部分。任何会破坏审计能力的清理动作，都应视为产品缺陷，而不是操作者偏好。

@@ -1,27 +1,27 @@
-# Release Plan
+# 发布计划
 
-## Repository Shape
+## 仓库形态
 
-The v2 direction is a mono-repo with three implementation areas:
+v2 方向是一个 mono-repo，包含三个主要实现区域：
 
 - `packages/infoproc-core`
 - `packages/bdpan-ops`
 - `packages/integration`
 
-Those package directories now exist in early form. The root repository still defines the cross-package contract they should converge on.
+这些目录已经以早期形态存在。当前根仓库的主要职责，是先定义它们最终要收敛到的跨包契约。
 
-## Release Order
+## 发布顺序
 
-1. stabilize root metadata and docs
-2. migrate integration wrappers
-3. migrate reusable Netdisk operations
-4. migrate reusable processing wrappers
-5. cut the first code-bearing public release
+1. 先稳定根层元数据和文档
+2. 迁移 integration wrappers
+3. 迁移可复用的网盘操作层
+4. 迁移可复用的处理层 wrappers
+5. 切出第一个真正带代码能力的公开版本
 
-## First Public Tag Requirements
+## 第一个公开 tag 的要求
 
-- coherent root repository metadata
-- stable workflow docs
-- stable storage and audit policy
-- example data shapes for input pointers and exception markers
-- a documented command surface, even if some commands are still wrappers in transition
+- 连贯的根仓库元数据
+- 稳定的工作流文档
+- 稳定的存储和审计策略
+- 输入指针与异常标记的数据形状示例
+- 有明确文档描述的命令面，即使其中部分命令仍处在 wrapper 过渡阶段

@@ -1,23 +1,23 @@
-# Release Checklist
+# 发布检查清单
 
-## Before tagging
+## 打 tag 之前
 
-- update [VERSION](/mnt/disk2/wuxiaoran/infoproc/oss-v2/VERSION:1)
-- update [CHANGELOG.md](/mnt/disk2/wuxiaoran/infoproc/oss-v2/CHANGELOG.md:1)
-- run `make check`
-- run package compile checks
-- verify example JSON files still match the documented schemas
+- 更新 [VERSION](../VERSION)
+- 更新 [CHANGELOG.md](../CHANGELOG.md)
+- 运行 `make check`
+- 运行包级 compile 检查
+- 确认示例 JSON 仍然符合文档中描述的数据结构
 
-## Release-facing surfaces
+## 对外发布面
 
-- root README
-- install and bootstrap docs
-- workflow docs
-- audit and retention docs
-- package skeletons
+- 根 README
+- install 和 bootstrap 文档
+- workflow 文档
+- audit 与 retention 文档
+- package 骨架
 - scripts
 
-## After tagging
+## 打 tag 之后
 
-- publish release notes
-- note unresolved placeholders for the next version
+- 发布 release notes
+- 记录下一版本仍未解决的占位项

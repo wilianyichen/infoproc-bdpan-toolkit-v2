@@ -1,62 +1,62 @@
-# Workflow
+# 工作流
 
-## Standard remote-first workflow
+## 标准的 remote-first 流程
 
-1. Identify the remote input directory on Baidu Netdisk.
-2. Download it into a temporary local input tree.
-3. Run `infoproc process`.
-4. Verify the run completed successfully.
-5. Upload clean text results to the remote text tree.
-6. Upload distill and rank results to the remote final trees.
-7. Flag any `no_valid_text` exceptions.
-8. Convert the local input tree into a remote pointer.
-9. Prune bulky `00_source` and `02_normalized` caches from the run.
-10. Keep only compact audit residues.
+1. 在百度网盘上确定远端输入目录
+2. 下载到一个临时本地输入树
+3. 运行 `infoproc process`
+4. 校验 run 已成功完成
+5. 把 clean text 上传到远端文本目录
+6. 把 distill 和 rank 上传到远端最终结果目录
+7. 标记 `no_valid_text` 异常
+8. 把本地输入树转换成远端指针
+9. 删除 run 中体积很大的 `00_source` 和 `02_normalized`
+10. 只保留紧凑的审计残留
 
-## Command Layers
+## 命令层
 
-Low-level command groups:
+底层命令分成三组：
 
 - `infoproc`
 - `infoproc-run`
 - `bdpan`
 
-Planned high-level entry point:
+计划中的高层入口：
 
 - `infoproc-bdpan run-remote`
 
-That command should encapsulate:
+这个命令最终应封装：
 
-1. remote download
-2. local processing
-3. upload verification
-4. input pointer conversion
-5. post-success pruning
+1. 远端下载
+2. 本地处理
+3. 上传校验
+4. 输入指针转换
+5. 成功后的缓存清理
 
-## Remote Result Roots
+## 远端结果根目录
 
-Deployments should define fixed remote output roots for:
+实际部署应当为下列结果定义固定远端根目录：
 
 - clean text
 - distill markdown
 - rank markdown
 
-The exact remote paths are deployment policy, not repository policy. They should be recorded in operator docs and input indexes.
+具体远端路径属于部署策略，不属于仓库硬编码策略。它们应记录在操作者文档和输入索引中。
 
-## Exception workflow
+## 异常处理流程
 
-If a file produces:
+如果某个文件出现：
 
-- empty transcript segments
-- empty raw text
-- empty clean text
+- transcript segments 为空
+- raw text 为空
+- clean text 为空
 
-then:
+那么应当：
 
-1. classify it as `no_valid_text`
-2. exclude it from upload
-3. preserve the exception in the audit layer
+1. 归类为 `no_valid_text`
+2. 从上传步骤中排除
+3. 在审计层保留这条异常
 
-Reference:
+参考：
 
 - [../specs/empty-transcript-policy.md](../specs/empty-transcript-policy.md)

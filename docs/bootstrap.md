@@ -1,18 +1,18 @@
-# Bootstrap
+# 启动工作区
 
-## Definition
+## 定义
 
-Bootstrap means turning a repository checkout into a usable operator workspace.
+Bootstrap 的意思是：把一个仓库 checkout 转成一个真正可用的操作者工作区。
 
-## Minimal checklist
+## 最小检查清单
 
-1. create a virtual environment
-2. install the three local packages in editable mode
-3. configure token and key files outside Git
-4. run repository checks
-5. verify the integration CLI prints a workflow summary
+1. 创建虚拟环境
+2. 以 editable mode 安装三个本地包
+3. 把 token 和 key 文件配置在 Git 之外
+4. 运行仓库检查
+5. 确认 integration CLI 能输出 workflow summary
 
-## Suggested first commands
+## 建议的第一组命令
 
 ```bash
 python3 -m venv .venv

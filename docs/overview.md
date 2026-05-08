@@ -1,54 +1,54 @@
-# Overview
+# 总览
 
-## Two tools, one workflow
+## 两个工具，一套工作流
 
 ### infoproc
 
-`infoproc` is the processing engine.
+`infoproc` 是处理引擎。
 
-Core functions:
+核心能力：
 
-- audio/video transcription
-- text cleanup
-- markdown distillation
-- markdown rank reduction
-- run manifests and per-file stage tracking
+- 音频和视频转写
+- 文本清洗
+- Markdown 蒸馏
+- Markdown 降秩
+- run manifest 与逐文件阶段跟踪
 
 ### baidupan-tools
 
-`baidupan-tools` is the remote storage and reconciliation layer.
+`baidupan-tools` 是远端存储与对账层。
 
-Core functions:
+核心能力：
 
-- browse and search Netdisk
-- upload and download trees
-- compare local and remote structures
-- generate safe operation manifests
-- validate and apply filesystem plans
+- 浏览和检索百度网盘
+- 上传和下载目录树
+- 比较本地与远端结构
+- 生成安全的操作 manifest
+- 校验并执行文件系统计划
 
-## Why they must be documented together
+## 为什么必须一起文档化
 
-The real operator workflow is not:
+真实的操作者流程不是：
 
-- download something manually
-- run a processor
-- upload things manually
+- 手动下载一点东西
+- 跑一个处理器
+- 再手动传回去
 
-The real workflow is:
+真实工作流应该是：
 
-1. choose a remote source directory
-2. materialize it locally only while needed
-3. process with stage-aware manifests
-4. upload to fixed remote output roots
-5. prune local caches
-6. preserve only compact audit traces
+1. 选择一个远端源目录
+2. 只在处理时把媒体临时落到本地
+3. 用带阶段感知的 manifest 执行处理
+4. 上传到固定的远端结果根目录
+5. 清掉本地大缓存
+6. 只保留紧凑且关键的审计痕迹
 
-That means the processing engine and the remote storage toolkit form one operational system.
+也就是说，处理引擎和远端存储工具并不是两个分散脚本，而是一套统一的操作系统。
 
-## Design goals
+## 设计目标
 
-- Minimize local disk usage
-- Preserve auditability
-- Make reruns deterministic
-- Make upload status easy to verify
-- Make cleanup safe and rule-based
+- 尽量减少本地磁盘占用
+- 保留审计能力
+- 让重跑行为可预测
+- 让上传状态容易校验
+- 让清理动作有规则且安全

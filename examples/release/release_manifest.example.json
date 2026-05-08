@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "package_name": "infoproc-bdpan-toolkit-v2",
+  "version": "0.1.0",
+  "generated_at_utc": "2026-05-08T12:00:00+00:00",
+  "git_commit": "aaee029000000000000000000000000000000000",
+  "bundle_root": "dist/release/infoproc-bdpan-toolkit-v2-0.1.0",
+  "payload_root": "dist/release/infoproc-bdpan-toolkit-v2-0.1.0/payload/infoproc-bdpan-toolkit-v2-0.1.0",
+  "archives": [
+    {
+      "format": "zip",
+      "path": "dist/release/infoproc-bdpan-toolkit-v2-0.1.0/archives/infoproc-bdpan-toolkit-v2-0.1.0.zip",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "size_bytes": 123456
+    },
+    {
+      "format": "tar.gz",
+      "path": "dist/release/infoproc-bdpan-toolkit-v2-0.1.0/archives/infoproc-bdpan-toolkit-v2-0.1.0.tar.gz",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "size_bytes": 120000
+    }
+  ],
+  "included_paths": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "Makefile",
+    "README.md",
+    "VERSION",
+    "docs/overview.md",
+    "packages/integration/pyproject.toml",
+    "scripts/release/package_release.py"
+  ]
+}

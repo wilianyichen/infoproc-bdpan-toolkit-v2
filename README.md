@@ -1,55 +1,69 @@
 # Infoproc x Baidupan Toolkit v2
 
-Remote-first media processing and Baidu Netdisk operations for knowledge workflows.
+这是一个中文优先的开源仓库骨架，用来统一两套系统：
 
-This repository is the release-oriented v2 scaffold for a combined system:
+- `infoproc`
+  负责媒体/文本处理
+- `baidupan-tools`
+  负责百度网盘浏览、上传下载、对账、同步和规划
 
-- `infoproc` as the processing engine
-- `baidupan-tools` as the remote storage and reconciliation layer
+目标不是把两套工具并排摆着，而是把它们规范成一套完整的 remote-first 工作流：
 
-## Status
+1. 从网盘按需拉取源媒体到本地
+2. 本地执行处理
+3. 结果回传到固定网盘目录
+4. 保留审计痕迹
+5. 清理本地大缓存
 
-Version `0.1.0` is a docs-first open-source scaffold.
+## 当前状态
 
-What exists now:
+版本：`0.1.0`
 
-- repository metadata for public releases
-- operator documentation for the remote-first workflow
-- examples and specs for audit and storage contracts
+当前这版已经具备：
 
-What is still in progress:
+- 可独立初始化的仓库元数据
+- 中文优先的工作流文档
+- package / scripts / examples / specs 骨架
+- release scaffold 检查与打包入口
 
-- a stable public CLI surface for every workflow step
-- polished packaging and release automation across all packages
+当前还在继续演进：
 
-## Scope
+- 更稳定的公开 CLI
+- 更完整的打包与 release 自动化
+- 从私有安装态向真正独立开源项目的迁移
 
-This project defines one operational system:
+## 核心原则
 
-1. materialize selected remote media locally
-2. process it with `infoproc`
-3. upload results back to fixed remote roots
-4. keep audit residues
-5. prune bulky local caches
+- 网盘是长期存储层
+- 本地磁盘是计算缓存层
+- 每次处理都要可审计
+- 清理必须显式、规则化、安全
+- 空转写、短音频等异常必须单独标记，不能混进正常交付结果
 
-The design goal is simple:
+## 从哪里开始看
 
-- remote storage is durable
-- local storage is execution cache
-- every run is auditable
-- cleanup is explicit and safe
+- 总览：
+  [docs/overview.md](docs/overview.md)
+- 标准工作流：
+  [docs/workflow.md](docs/workflow.md)
+- 环境与依赖：
+  [docs/environment.md](docs/environment.md)
+- 目录规范：
+  [docs/directories.md](docs/directories.md)
+- 命令面：
+  [docs/commands.md](docs/commands.md)
+- 审计与保留：
+  [docs/audit-and-retention.md](docs/audit-and-retention.md)
+- 安装：
+  [docs/install.md](docs/install.md)
+- bootstrap：
+  [docs/bootstrap.md](docs/bootstrap.md)
+- release 方向：
+  [docs/release-plan.md](docs/release-plan.md)
+- release checklist：
+  [docs/release-checklist.md](docs/release-checklist.md)
 
-## Start Here
-
-- Product overview: [docs/overview.md](docs/overview.md)
-- End-to-end workflow: [docs/workflow.md](docs/workflow.md)
-- Environment model: [docs/environment.md](docs/environment.md)
-- Directory model: [docs/directories.md](docs/directories.md)
-- Command surface: [docs/commands.md](docs/commands.md)
-- Audit and retention: [docs/audit-and-retention.md](docs/audit-and-retention.md)
-- Release direction: [docs/release-plan.md](docs/release-plan.md)
-
-## Repository Layout
+## 仓库结构
 
 ```text
 oss-v2/
@@ -68,9 +82,9 @@ oss-v2/
 └── specs/
 ```
 
-## Planned Code Layout
+## 代码布局
 
-The intended v2 mono-repo shape is:
+当前采用 mono-repo 形态，分成 3 个逻辑包：
 
 ```text
 packages/
@@ -79,18 +93,32 @@ packages/
 └── integration/
 ```
 
-The package directories now exist, but the root release surface is still centered on metadata, docs, examples, and specs while the package implementations stabilize.
+含义分别是：
 
-## Release Principles
+- `infoproc-core`
+  处理引擎相关抽象
+- `bdpan-ops`
+  百度网盘操作层
+- `integration`
+  把二者粘成 remote-first 操作系统的整合层
 
-- Do not hardcode personal absolute paths in public docs.
-- Keep storage policy and audit policy explicit.
-- Treat upload verification as part of the workflow, not an optional follow-up.
-- Keep bulky source and normalized caches disposable.
+## release 原则
 
-## Quick Check
+- 公开文档里不要写死个人绝对路径
+- 存储策略和审计策略必须显式写出来
+- 上传校验不是可选步骤，而是工作流的一部分
+- 大型源文件缓存和规范化缓存应默认为可回收
+
+## English Note
+
+This repository is Chinese-first by default. English support can be added later,
+but current operator docs and workflow guidance are intentionally optimized for
+Chinese users.
+
+## 快速检查
 
 ```bash
 make check
 make version
+make package
 ```
