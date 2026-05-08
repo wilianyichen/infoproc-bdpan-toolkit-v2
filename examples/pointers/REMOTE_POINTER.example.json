@@ -1,0 +1,13 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-05-08T00:00:00+00:00",
+  "local_dir_name": "kaizhi_audio",
+  "remote_path": "/开智/录屏整理/音频",
+  "source_kind": "baidupan-remote",
+  "local_materialization": "ephemeral",
+  "cleanup_status": "pointer-only",
+  "notes": [
+    "Source media was removed after successful upload verification.",
+    "Run caches were pruned according to the retention policy."
+  ]
+}

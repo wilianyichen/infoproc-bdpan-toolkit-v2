@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-05-08T00:00:00+00:00",
+  "run_name": "kaizhi-audio-remote-missing-20260507",
+  "classification": "no_valid_text",
+  "flagged_count": 1,
+  "skip_upload_targets": [
+    "text",
+    "distill",
+    "rank"
+  ],
+  "flagged_files": [
+    {
+      "relative_path": "智慧的大聪明_2026_03_14/智慧的大聪明_2026_03_14_00_49_0006.mp3",
+      "duration_seconds": 2.83,
+      "segments_count": 0,
+      "raw_text_bytes": 0,
+      "clean_text_bytes": 0,
+      "reasons": [
+        "segments_empty",
+        "raw_text_empty",
+        "clean_text_empty",
+        "short_audio"
+      ],
+      "suggested_action": "Do not upload text/distill/rank artifacts for this file unless it is retranscribed successfully."
+    }
+  ]
+}

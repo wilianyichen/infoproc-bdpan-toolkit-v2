@@ -1,0 +1,6 @@
+{
+  "text": "/开智/视频文本蒸馏/文本/录播文本",
+  "final": "/开智/视频文本蒸馏/蒸馏/录播",
+  "distill_subdir": "distill__md",
+  "rank_subdir": "rank__md"
+}

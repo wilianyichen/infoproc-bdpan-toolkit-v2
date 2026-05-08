@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-05-08T00:00:00+00:00",
+  "run_name": "kaizhi-audio-remote-missing-20260507",
+  "remote_input_path": "/开智/录屏整理/音频",
+  "upload_completed": true,
+  "exceptional_files": 1,
+  "intentionally_deleted_artifacts": [
+    "00_source",
+    "02_normalized"
+  ],
+  "retained_artifacts": [
+    "01_probe",
+    "03_text_raw",
+    "04_text_clean",
+    "05_final",
+    "_logs",
+    "_manifests",
+    "_flags",
+    "_reports"
+  ]
+}

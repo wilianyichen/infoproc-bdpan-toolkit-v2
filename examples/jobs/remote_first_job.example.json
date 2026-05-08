@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-05-08T00:00:00+00:00",
+  "remote_input_path": "/开智/录屏整理/音频",
+  "local_input_dir_name": "kaizhi_audio",
+  "run_name": "kaizhi-audio-20260508",
+  "profile": "quality",
+  "distill_mode": "both",
+  "text_output_root": "/开智/视频文本蒸馏/文本/录播文本",
+  "final_output_root": "/开智/视频文本蒸馏/蒸馏/录播",
+  "retention_policy": {
+    "keep": [
+      "01_probe",
+      "03_text_raw",
+      "04_text_clean",
+      "05_final",
+      "_delivery",
+      "_logs",
+      "_manifests",
+      "_flags",
+      "_reports"
+    ],
+    "prune": [
+      "00_source",
+      "02_normalized"
+    ]
+  },
+  "exception_policy": {
+    "classification": "no_valid_text",
+    "skip_upload_targets": [
+      "text",
+      "distill",
+      "rank"
+    ]
+  }
+}

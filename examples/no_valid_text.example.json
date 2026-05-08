@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-05-08T00:00:00+00:00",
+  "run_dir": "/path/to/run",
+  "flagged_count": 1,
+  "skip_upload_targets": [
+    "text",
+    "distill",
+    "rank"
+  ],
+  "flagged_files": [
+    {
+      "relative_path": "example/example.mp3",
+      "kind": "audio",
+      "duration_seconds": 2.87,
+      "engine": "faster-whisper",
+      "language": "nn",
+      "segments_count": 0,
+      "raw_text_bytes": 0,
+      "clean_text_bytes": 0,
+      "reasons": [
+        "segments_empty",
+        "raw_text_empty",
+        "clean_text_empty",
+        "short_audio"
+      ],
+      "classification": "no_valid_text",
+      "skip_upload_targets": [
+        "text",
+        "distill",
+        "rank"
+      ],
+      "suggested_action": "Do not upload text/distill/rank artifacts for this file unless it is retranscribed successfully."
+    }
+  ]
+}
